@@ -2,6 +2,22 @@ import 'package:args/args.dart';
 import 'features/transactions/bankAccount.dart';
 
 const String version = '0.0.1';
+/// method to learn about required parameters
+void printrequired(int i) {
+  print(i);
+}
+/// method to learn about optional parameters(positional)
+void printOptional(int i, [int? j]) {
+  print("i: $i, j: $j");
+}
+/// method to learn about optional parameters(named)
+void printNamed(int i, {int? j}) {
+  print("i: $i, j: $j");
+}
+/// method to learn about required named parameters
+void printRequiredNamed(int i, {required int j}) {
+  print("i: $i, j: $j");
+}
 
 void main(List<String> arguments) {
   // BankAccount account = BankAccount();
@@ -27,12 +43,14 @@ List Posts = [
   "Post 2: Learning Dart is fun!",
   "Post 3: OOP in Dart is powerful!",
 ];
+
 /// This is an abstract class that defines the interface for a social media platform.
 abstract class SocialMedia {
   Future<String> getPosts();
   Future<String> deletePost(int postId);
   Future<String> createPost(String content);
 }
+
 /// This class implements the SocialMedia interface and provides concrete implementations for its methods.
 class SocialMediaImpl extends SocialMedia {
   @override
@@ -56,6 +74,7 @@ class SocialMediaImpl extends SocialMedia {
     return Future.value("Post created successfully");
   }
 }
+
 /// This class is responsible for rendering the UI and interacting with the social media platform.
 class Uirendering {
   SocialMedia socialMedia;
