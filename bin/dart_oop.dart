@@ -2,18 +2,22 @@ import 'package:args/args.dart';
 import 'features/transactions/bankAccount.dart';
 
 const String version = '0.0.1';
+
 /// method to learn about required parameters
 void printrequired(int i) {
   print(i);
 }
+
 /// method to learn about optional parameters(positional)
 void printOptional(int i, [int? j]) {
   print("i: $i, j: $j");
 }
+
 /// method to learn about optional parameters(named)
 void printNamed(int i, {int? j}) {
   print("i: $i, j: $j");
 }
+
 /// method to learn about required named parameters
 void printRequiredNamed(int i, {required int j}) {
   print("i: $i, j: $j");
@@ -95,3 +99,25 @@ class Uirendering {
     socialMedia.createPost(content);
   }
 }
+
+/// learn about mixin
+class Employee {
+  String? name;
+}
+
+mixin Manager {
+  String position = "Manager";
+  void manage() {
+    print("Managing team");
+  }
+}
+class Developer extends Employee with Manager {
+  void develop() {
+    print("Developing software");
+  }
+  void displayInfo() {
+    print("Position: $position");
+  }
+  
+  
+} 
